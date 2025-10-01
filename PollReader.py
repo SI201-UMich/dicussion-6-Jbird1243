@@ -107,6 +107,16 @@ class PollReader():
         for i in range(len(self.data_dict['sample type'])):
             if self.data_dict['sample type'][i] == 'LV':
                 harris_sum += self.data_dict['Harris result'][i]
+                trump_sum += self.data_dict['Trump result'][i]
+                count += 1
+
+        if count > 0:
+             harris_avg = harris_sum / count
+             trump_avg = trump_sum / count
+             return {"Harris Average": harris_avg, "Trump Average": trump_avg}
+        else:
+            return {"Harris Average": None, "Trump Average": None}
+            
 
         pass
 
