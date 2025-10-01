@@ -85,9 +85,10 @@ class PollReader():
 
         if max_harris > max_trump:
             return f"Harris{(max_harris*100):.1f}%"
-        else:
+        elif max_trump > max_harris:
             return f"Trump{(max_trump*100):.1f}%"
         else:
+            return f"Even at {(max_harris*100):.1f}%"
         
         pass
 
